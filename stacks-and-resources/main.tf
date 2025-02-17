@@ -19,6 +19,10 @@ variable pets_resources {
   default = 5
 }
 
+variable worker_pool_id {
+  type = string
+}
+
 resource "spacelift_stack" "resources-redesign-stack" {
   count          = var.stacks 
   name           = "Resources redesign stack #${count.index}"
