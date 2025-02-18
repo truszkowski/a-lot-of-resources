@@ -37,7 +37,7 @@ resource "spacelift_stack" "resources-redesign-stack" {
 resource "spacelift_environment_variable" "resources-redesign-pets" {
   count       = var.stacks
   stack_id    = spacelift_stack.resources-redesign-stack[count.index].id
-  name        = "pets"
+  name        = "TF_VAR_pets"
   value       = "${var.pets_resources}"
   write_only  = false
 }
